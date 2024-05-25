@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GenericWithIdentityModel.Data.Model.Employee>
+@{
+    ViewData["Title"] = "Index";
+    int i = 0;
+}
+
+<div class="container p-4">
+    <div class="row p-3">
+        <div class="col-6">
+            <h2 class="text-primary">Employee List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-action="Create" asp-controller="Employee" class="btn btn-success">
+               Create New Category
+            </a>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            i++;
+            <tr>
+                <td>@i</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td role="group">
+                    <a asp-action="Edit" asp-controller="Employee" asp-route-id="@item.Id"></a>&nbsp;&nbsp;&nbsp;
+                    <a asp-action="Delete" asp-controller="Employee" asp-route-id="@item.Id"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
