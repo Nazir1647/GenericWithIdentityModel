@@ -12,6 +12,6 @@ namespace GenericWithIdentityModel.Data
             
         }
         public DbSet<Employee> Employees { get; set; }
-
+        public DbSet<Registration> registrations { get; set; }
     }
 }

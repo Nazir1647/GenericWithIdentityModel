@@ -36,6 +36,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddScoped(typeof(EmployeeRepository));
+builder.Services.AddScoped(typeof(RegistrationRepository));
 
 var app = builder.Build();
 
